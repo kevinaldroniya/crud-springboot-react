@@ -8,6 +8,7 @@ import com.spring.react.crud.service.ValidationService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 import org.springframework.web.server.ResponseStatusException;
 
 @Service
@@ -20,6 +21,7 @@ public class UserServiceImpl implements UserService {
     private ValidationService validationService;
 
 
+    @Transactional
     @Override
     public void register(RegisterUserRequest request) {
         validationService.validate(request);

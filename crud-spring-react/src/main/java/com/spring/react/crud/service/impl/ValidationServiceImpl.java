@@ -19,7 +19,7 @@ public class ValidationServiceImpl implements ValidationService {
     @Override
     public void validate(Object request) {
         Set<ConstraintViolation<Object>> validate = validator.validate(request);
-        if (!validate.isEmpty()){
+        if (validate.size()!=0){
             throw new ConstraintViolationException(validate);
         }
     }
