@@ -1,0 +1,13 @@
+version: "3.8"
+
+services:
+  db:
+    container_name: mysql_spring_react_crud
+    image: mysql:latest
+    environment:
+      MYSQL_ROOT_PASSWORD: 1234
+      MYSQL_DATABASE: csr_app
+      MYSQL_USER: csr_user
+      MYSQL_PASSWORD: 1234
+    ports:
+      - "3306:3306"
